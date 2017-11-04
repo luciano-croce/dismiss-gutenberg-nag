@@ -30,7 +30,7 @@
 	 * @version           1.0.1
 	 * @build             2017-11-04
 	 * @since             1.0.0
-     * @released          2017-10-30
+	 * @released          2017-10-30
 	 * @license           GPLv2 or later
 	 */
 
@@ -101,10 +101,11 @@ else {
 /**
  * Dismiss Dashboard Widget "try Gutenberg" Nag
  *
- * @author  Luciano Croce
- * @version 1.6.1
- * @build   2017-10-30
- * @since   1.0.0
+ * @author   Luciano Croce
+ * @version  1.0.1
+ * @build    2017-11-04
+ * @since    1.0.0
+ * @released 2017-10-30
  */
 function dismiss_dashboard_widget_try_gutenberg_nag() {
 	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
