@@ -1,7 +1,7 @@
 === Dismiss try Gutenberg Nag Dashboard Widget ===
 Contributors: luciano-croce
 Donate link: https://github.com/luciano-croce/
-Tags: dismiss-gutenberg-nag, dismiss-gutenberg-widget, dismiss-gutenberg-widget-nag, dismiss-gutenberg-dashboard-nag, dismiss-gutenberg-dashboard-widget-nag
+Tags: dismiss-gutenberg-nag,dismiss-gutenberg-widget,dismiss-gutenberg-widget-nag,dismiss-gutenberg-dashboard-nag,dismiss-gutenberg-dashboard-widget-nag
 Requires PHP: 5.2.4
 Requires at least: 4.8
 Tested up to: 4.9
@@ -15,7 +15,7 @@ auto dismiss try gutenberg nag dashboard widget when is activated or automatical
 
 Auto Dismiss, "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
 
-[![Build Status](https://travis-ci.org/sLaNGjI/wp-missed-schedule.svg?branch=master)](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag)
+[![Build Status](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag.svg?branch=master)](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag)
 
 Development for this plugin takes place at [GitHub](https://github.com/luciano-croce/dismiss-gutenberg-nag/) official page.
 
