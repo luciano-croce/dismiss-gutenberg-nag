@@ -6,4 +6,3 @@ Auto dismiss, "<strong>try Gutenberg</strong>" nag, dashboard widget, when is ac
 * <strong>To date</strong>, try Gutenberg nag, preliminarily introduced in WP [4.9-beta3](https://wordpress.org/news/2017/10/wordpress-4-9-beta-3/) was already respectively removed in WP 4.9-beta4, in WP 4.9-RC1, and in WP 4.9.0, but <strong>is expected to land in core when WP 4.9.1 is released</strong>, in late 2017/early 2018 according with this related ticket on [Core](https://core.trac.wordpress.org/ticket/41316).
 
 
-
