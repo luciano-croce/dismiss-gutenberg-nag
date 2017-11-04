@@ -6,7 +6,7 @@
  Version:           1.0.1
  Requires at least: 4.8
  Tested up to:      4.9
- Requires PHP:      5.4
+ Requires PHP:      5.2.4
  Author:            Luciano Croce
  Author URI:        https://github.com/luciano-croce/
  License:           GPLv2 or later
@@ -49,8 +49,8 @@ if ( !function_exists( 'add_action' ) )	{
 	exit;
 }
 
-if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
-//	wp_die( __( 'This plugin requires PHP 5.4+ or later: Activation Stopped! Please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)' ) ); # uncomment it if you prefer die notification
+if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
+//	wp_die( __( 'This plugin requires PHP 5.2.4 or greater: Activation Stopped! Please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)' ) ); # uncomment it if you prefer die notification
 
 			function dismiss_gutenberg_nag_psd_php_version_init()
 				{
@@ -62,7 +62,7 @@ if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
 				{
 ?>
 <div class="notice notice-error is-dismissible">
-<p>This plugin requires PHP 5.4+ or later: please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)</p>
+<p>This plugin requires PHP 5.2.4 or greater: please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)</p>
 </div>
 <div class="notice notice-warning is-dismissible">
 <p>Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.</p>
@@ -77,7 +77,7 @@ include( ABSPATH . WPINC . '/version.php' );
 $version = str_replace( '-src', '', $wp_version );
 
 if ( version_compare( $version, '4.8', '<' ) ) {
-//	wp_die( __( 'This plugin requires WordPress 4.8+ or later: Activation Stopped!' ) );                                                                                                     # uncomment it if you prefer die notification
+//	wp_die( __( 'This plugin requires WordPress 4.8+ or greater: Activation Stopped!' ) );                                                                                                     # uncomment it if you prefer die notification
 
 			function dismiss_gutenberg_nag_psd_wp_version_init()
 				{
@@ -89,7 +89,7 @@ if ( version_compare( $version, '4.8', '<' ) ) {
 				{
 ?>
 <div class="notice notice-error is-dismissible">
-<p>This plugin requires WordPress 4.8+ or later: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3</p>
+<p>This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3</p>
 </div>
 <div class="notice notice-warning is-dismissible">
 <p>Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.</p>
