@@ -2,7 +2,7 @@
 /*
  Plugin Name:       Dismiss Gutenberg Nag
  Plugin URI:        https://github.com/luciano-croce/dismiss-gutenberg-nag/
- Description:       Auto Dismiss, "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
+ Description:       Auto Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
  Version:           1.0.1
  Requires at least: 4.8
  Tested up to:      4.9
