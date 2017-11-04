@@ -15,6 +15,8 @@ auto dismiss try gutenberg nag dashboard widget when is activated or automatical
 
 Auto Dismiss, "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
 
+[![Build Status](https://travis-ci.org/sLaNGjI/wp-missed-schedule.svg?branch=master)](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag)
+
 > **Plugin Development**
 >
 > [GitHub](https://github.com/luciano-croce/dismiss-gutenberg-nag/) official plugin development page.
