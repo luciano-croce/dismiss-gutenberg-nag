@@ -1,4 +1,5 @@
-= 1.0.1 =
+1.0.1
+
 * 2017-11-04
  * Changed plugin name
  * Fixed plugin slug
@@ -9,9 +10,10 @@
  * Updated README.md according new changes
  * Updated readme.txt according new changes
 
-= 1.0.0 =
+1.0.0
+
 * 2017-10-30
  * First initial release of the plugin.
  * Full Support and Compatibility for WordPress 4.9-beta3 or later
  * Work with all WordPress Versions from 4.8+ to 4.9+
-* Preemptive Support for WordPress 5.0-alpha
+ * Preemptive Support for WordPress 5.0-alpha
