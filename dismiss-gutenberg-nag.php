@@ -73,8 +73,10 @@ if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
 }
 else {
 global $wp_version;
+include( ABSPATH . WPINC . '/version.php' );
+$version = str_replace( '-src', '', $wp_version );
 
-if ( version_compare( $wp_version, '4.8.0', '<' ) ) {
+if ( version_compare( $version, '4.8', '<' ) ) {
 //	wp_die( __( 'This plugin requires WordPress 4.8+ or later: Activation Stopped!' ) );                                                                                                     # uncomment it if you prefer die notification
 
 			function dismiss_gutenberg_nag_psd_wp_version_init()
