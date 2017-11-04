@@ -1,7 +1,7 @@
 === Dismiss try Gutenberg Nag Dashboard Widget ===
 Contributors: luciano-croce
 Donate link: https://github.com/luciano-croce/
-Tags: dismiss-gutenberg-nag,dismiss-gutenberg-widget,dismiss-gutenberg-widget-nag,dismiss-gutenberg-dashboard-nag,dismiss-gutenberg-dashboard-widget-nag
+Tags: dismiss-gutenberg-nag, dismiss-gutenberg-widget, dismiss-gutenberg-widget-nag, dismiss-gutenberg-dashboard-nag, dismiss-gutenberg-dashboard-widget-nag
 Requires PHP: 5.2.4
 Requires at least: 4.8
 Tested up to: 4.9
