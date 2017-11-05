@@ -1,8 +1,8 @@
 <?php 
 /*
  Plugin Name:       Dismiss Gutenberg Nag
- Plugin URI:        https://github.com/luciano-croce/dismiss-gutenberg-nag/
- Description:       Auto Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
+ Plugin URI:        https://wordpress.org/plugins/dismiss-gutenberg-nag/
+ Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
  Version:           1.0.1
  Requires at least: 4.8
  Tested up to:      4.9
@@ -28,7 +28,7 @@
 	 * @wordpress-plugin  WordPress Plugin
 	 * @author            Luciano Croce <luciano.croce@gmail.com>
 	 * @version           1.0.1
-	 * @build             2017-11-04
+	 * @build             2017-11-05
 	 * @since             1.0.0
 	 * @released          2017-10-30
 	 * @license           GPLv2 or later
@@ -105,7 +105,7 @@ else {
  *
  * @author   Luciano Croce
  * @version  1.0.1
- * @build    2017-11-04
+ * @build    2017-11-05
  * @since    1.0.0
  * @released 2017-10-30
  */
