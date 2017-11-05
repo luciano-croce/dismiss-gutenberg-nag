@@ -153,7 +153,7 @@ function ddwtgn_adds_action_links($links, $file) {
 		}
 	return $links;
 }
-add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', null, 2 );
+//add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', null, 2 );                                                                                                                    # uncomment to enable this customization
 
 /**
  * Dismiss Dashboard Widget "try Gutenberg" Nag
