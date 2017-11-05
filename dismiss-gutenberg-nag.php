@@ -1,7 +1,7 @@
 <?php 
 /*
  Plugin Name:       Dismiss Gutenberg Nag
- Plugin URI:        https://wordpress.org/plugins/dismiss-gutenberg-nag/
+ Plugin URI:        https://github.com/luciano-croce/dismiss-gutenberg-nag/
  Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
  Version:           1.0.1
  Requires at least: 4.8
@@ -22,7 +22,7 @@
  */
 
 	/**
-	 * @link              https://github.com/luciano-croce/dismiss-gutenberg-nag/
+	 * @link              https://wordpress.org/plugins/dismiss-gutenberg-nag/
 	 * @package           Dismiss Gutenberg Nag
 	 * @subpackage        Gutenberg
 	 * @wordpress-plugin  WordPress Plugin
@@ -99,6 +99,43 @@ if ( version_compare( $version, '4.8', '<' ) ) {
 			add_action( 'admin_notices', 'dismiss_gutenberg_nag_ant_wp_version_init' );
 }
 else {
+
+/**
+ * Adds Plugin Row Meta Links
+ *
+ * @author   Luciano Croce
+ * @version  1.0.1
+ * @build    2017-11-05
+ * @since    1.0.0
+ * @released 2017-10-30
+*/
+function ddwtgn_adds_row_meta( $links, $file ) {
+	if ( $file == plugin_basename( __FILE__ ) )
+		{
+			$links[] = '<a href="https://github.com/luciano-croce/dismiss-gutenberg-nag/">' . __( 'Visit plugin site', 'dismiss-gutenberg-nag' ) . '</a>';
+		}
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta', 10, 2 );
+
+/*
+ * Adds Plugin Action Links
+ *
+ * @author   Luciano Croce
+ * @version  1.0.1
+ * @build    2017-11-05
+ * @since    1.0.0
+ * @released 2017-10-30
+*/
+function ddwtgn_adds_action_links($links, $file) {
+	if ( $file == plugin_basename( __FILE__ ) )
+		{
+			$wpmldbsu_settings_link = '<a href="index.php" style="color:#3db634">' . __( 'View Dashboard', 'dismiss-gutenberg-nag' ) . '</a>';
+			$links[] = $wpmldbsu_settings_link;
+		}
+	return $links;
+}
+add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', null, 2 );
 
 /**
  * Dismiss Dashboard Widget "try Gutenberg" Nag
