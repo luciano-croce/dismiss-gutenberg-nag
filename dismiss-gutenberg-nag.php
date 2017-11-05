@@ -16,7 +16,7 @@
  *
  *    Copyright 2017 Luciano Croce (luciano.croce@gmail.com)
  *
- * Tips: a neat trick is to put this single file dismiss-gutenberg-nag.php (not its parent directory)
+ * Tips: a neat trick, is to put this single file dismiss-gutenberg-nag.php (not its parent directory)
  * in the /wp-content/mu-plugins/ directory (create it if not exists) so you won't even have to enable it,
  * and will be loaded by default, also, since first step of installation!
  */
@@ -99,6 +99,24 @@ if ( version_compare( $version, '4.8', '<' ) ) {
 			add_action( 'admin_notices', 'dismiss_gutenberg_nag_ant_wp_version_init' );
 }
 else {
+
+/**
+ * Adds Plugin Row Meta Build
+ *
+ * @author   Luciano Croce
+ * @version  1.0.1
+ * @build    2017-11-05
+ * @since    1.0.0
+ * @released 2017-10-30
+*/
+function ddwtgn_adds_row_meta_build( $plugin_meta, $plugin_file ) {
+	if ( $plugin_file == plugin_basename( __FILE__ ) )
+		{
+			$plugin_meta[0] .= __( ' | Build 2017-11-05', 'dismiss-gutenberg-nag' );
+		}
+	return $plugin_meta;
+}
+add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_build', 10, 4 );
 
 /**
  * Adds Plugin Row Meta Links
