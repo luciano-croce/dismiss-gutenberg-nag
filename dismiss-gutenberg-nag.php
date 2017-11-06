@@ -22,16 +22,24 @@
  */
 
 	/**
-	 * @link              https://wordpress.org/plugins/dismiss-gutenberg-nag/
-	 * @package           Dismiss Gutenberg Nag
-	 * @subpackage        Gutenberg
-	 * @wordpress-plugin  WordPress Plugin
-	 * @author            Luciano Croce <luciano.croce@gmail.com>
-	 * @version           1.0.1
-	 * @build             2017-11-05
-	 * @since             1.0.0
-	 * @released          2017-10-30
-	 * @license           GPLv2 or later
+	 * Summary     
+	 *
+	 * Description 
+	 *
+	 * @todo       Preemptive support for WordPress 5.0-alpha
+	 *
+	 * PHPDoc      ({@link https://wordpress.org/plugins/dismiss-gutenberg-nag/})
+	 *
+	 * @package    WordPress\Plugin
+	 * @subpackage Gutenberg\Dismiss Gutenberg Nag
+	 * @link       https://wordpress.org/plugins/dismiss-gutenberg-nag/ Plugin hosted on WordPress repository
+	 *
+	 * @version    1.0.1 2017-11-05 Stable
+	 * @since      1.0.0 2017-10-30 1st Release
+	 *
+	 * @author     Luciano Croce <luciano.croce@gmail.com>
+	 * @copyright  2017 Luciano Croce
+	 * @license    https://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later
 	 */
 
 if ( !defined( 'ABSPATH' ) ) exit;
