@@ -12,34 +12,44 @@
  License:           GPLv2 or later
  License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:       dismiss-gutenberg-nag
+ Domain Path:       /languages
  Network:           true
+ GitHub Plugin URI: https://github.com/luciano-croce/dismiss-gutenberg-nag/
+ GitHub Branch:     master
+ Requires WP:       4.8
  *
- *    Copyright 2017 Luciano Croce (luciano.croce@gmail.com)
+ * Copyright 2017 Luciano Croce (luciano.croce@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 2, as published by the Free Software Foundation. You may NOT assume
+ * that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, on an "AS IS", but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * This program is written with the intent of being helpful,
+ * but you are responsible for its use or actions on your own website.
  *
  * Tips: a neat trick, is to put this single file dismiss-gutenberg-nag.php (not its parent directory)
  * in the /wp-content/mu-plugins/ directory (create it if not exists) so you won't even have to enable it,
- * and will be loaded by default, also, since first step of installation!
+ * and will be loaded by default, also, since first step installation of WordPress setup!
  */
 
 	/**
-	 * Summary     
-	 *
-	 * Description 
-	 *
-	 * @todo       Preemptive support for WordPress 5.0-alpha
-	 *
-	 * PHPDoc      ({@link https://wordpress.org/plugins/dismiss-gutenberg-nag/})
+	 * PHPDocumentor
 	 *
 	 * @package    WordPress\Plugin
 	 * @subpackage Gutenberg\Dismiss Gutenberg Nag
-	 * @link       https://wordpress.org/plugins/dismiss-gutenberg-nag/ Plugin hosted on WordPress repository
+	 * @link       https://wordpress.org/plugins/dismiss-gutenberg-nag/ - Plugin hosted on wordpress.org repository
 	 *
-	 * @version    1.0.1 2017-11-05 Stable
-	 * @since      1.0.0 2017-10-30 1st Release
+	 * @version    1.0.1 (Build 2017-11-05) Stable
+	 * @since      1.0.0 (Build 2017-10-30) 1st Release
 	 *
 	 * @author     Luciano Croce <luciano.croce@gmail.com>
-	 * @copyright  2017 Luciano Croce
-	 * @license    https://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later
+	 * @copyright  2017 - Luciano Croce
+	 * @license    https://www.gnu.org/licenses/gpl-2.0.html - GPLv2 or later
+	 *
+	 * @todo       Preemptive support for 5.0-alpha trunk
 	 */
 
 if ( !defined( 'ABSPATH' ) ) exit;
@@ -111,16 +121,14 @@ else {
 /**
  * Adds Plugin Row Meta Build
  *
- * @author   Luciano Croce
- * @version  1.0.1
- * @build    2017-11-05
- * @since    1.0.0
- * @released 2017-10-30
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
 */
 function ddwtgn_adds_row_meta_build( $plugin_meta, $plugin_file ) {
 	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$plugin_meta[0] .= __( ' | Build 2017-11-05', 'dismiss-gutenberg-nag' );
+			$plugin_meta[0] .= ' | ' . __( 'Build', 'dismiss-gutenberg-nag' ) . ' ' . __( '2017-11-05', 'dismiss-gutenberg-nag' );
 		}
 	return $plugin_meta;
 }
@@ -129,53 +137,52 @@ add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_build', 10, 4 );
 /**
  * Adds Plugin Row Meta Links
  *
- * @author   Luciano Croce
- * @version  1.0.1
- * @build    2017-11-05
- * @since    1.0.0
- * @released 2017-10-30
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
 */
-function ddwtgn_adds_row_meta( $links, $file ) {
-	if ( $file == plugin_basename( __FILE__ ) )
+function ddwtgn_adds_row_meta_links( $plugin_meta, $plugin_file ) {
+	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$links[] = '<a href="https://github.com/luciano-croce/dismiss-gutenberg-nag/">' . __( 'Visit plugin site', 'dismiss-gutenberg-nag' ) . '</a>';
+			$plugin_meta[4] .= '<a href="https://github.com/luciano-croce/dismiss-gutenberg-nag/">' . __( 'Visit plugin site', 'dismiss-gutenberg-nag' ) . '</a>';
 		}
-	return $links;
+	return $plugin_meta;
 }
-add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta', 10, 2 );
+add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_links', 10, 2 );
 
-/*
+/**
  * Adds Plugin Action Links
  *
- * @author   Luciano Croce
- * @version  1.0.1
- * @build    2017-11-05
- * @since    1.0.0
- * @released 2017-10-30
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
 */
-function ddwtgn_adds_action_links($links, $file) {
-	if ( $file == plugin_basename( __FILE__ ) )
+function ddwtgn_adds_action_links( $plugin_meta, $plugin_file ) {
+	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$wpmldbsu_settings_link = '<a href="index.php" style="color:#3db634">' . __( 'View Dashboard', 'dismiss-gutenberg-nag' ) . '</a>';
-			$links[] = $wpmldbsu_settings_link;
+			$plugin_meta[3] .= '<a href="index.php" style="color:#3db634">' . __( 'Dashboard', 'dismiss-gutenberg-nag' ) . '</a>';
 		}
-	return $links;
+	return $plugin_meta;
 }
-//add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', null, 2 );                                                                                                                    # uncomment to enable this customization
+add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', 10, 6 );                                                                                                                    # uncomment to enable this customization
 
 /**
  * Dismiss Dashboard Widget "try Gutenberg" Nag
  *
- * @author   Luciano Croce
- * @version  1.0.1
- * @build    2017-11-05
- * @since    1.0.0
- * @released 2017-10-30
+ * This plugin use add_filter and not add_action.
+ *
+ * Filters should filter information, thus receiving information/data, applying the filter and returning information/data, and then used.
+ * However, filters are still action hooks.
+ * WordPress defines add_filter as "hooks a function to a specific filter action", and add_action as "hooks a function on to a specific action".
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
  */
 function dismiss_dashboard_widget_try_gutenberg_nag() {
-	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
+	remove_filter( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
 }
-add_action( 'admin_init', 'dismiss_dashboard_widget_try_gutenberg_nag' );
+add_filter( 'admin_init', 'dismiss_dashboard_widget_try_gutenberg_nag' );
 
 }
 }
