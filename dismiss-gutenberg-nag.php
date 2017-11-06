@@ -171,9 +171,9 @@ add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', 10, 6 );         
  *
  * This plugin use add_filter and not add_action.
  *
- * Filters should filter information, thus receiving information/data, applying the filter and returning information/data, and then used.
- * However, filters are still action hooks.
- * WordPress defines add_filter as "hooks a function to a specific filter action", and add_action as "hooks a function on to a specific action".
+ * Filters should filter information, thus receiving information/data, applying the filter and returning information/data,
+ * and then used. However, filters are still action hooks. WordPress defines add_filter as "hooks a function to a specific
+ * filter action", and add_action as "hooks a function on to a specific action".
  *
  * @author  Luciano Croce <luciano.croce@gmail.com>
  * @version 1.0.1 (Build 2017-11-05)
