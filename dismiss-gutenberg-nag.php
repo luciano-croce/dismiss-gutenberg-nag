@@ -2,7 +2,7 @@
 /*
  Plugin Name:       Dismiss Gutenberg Nag
  Plugin URI:        https://github.com/luciano-croce/dismiss-gutenberg-nag/
- Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, when put on mu-plugins directory.
+ Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or automatically, if it is in mu-plugins directory.
  Version:           1.0.1
  Requires at least: 4.8
  Tested up to:      4.9
@@ -36,6 +36,8 @@
  */
 
 	/**
+	 * Dismiss Gutenberg Nag
+	 *
 	 * PHPDocumentor
 	 *
 	 * @package    WordPress\Plugin
@@ -62,32 +64,29 @@ if ( !function_exists( 'add_action' ) )	{
 	header( 'HTTP/1.1 403 Forbidden' );
 	header( 'HTTP/1.2 403 Forbidden' );
 	header( 'HTTP/1.3 403 Forbidden' );
-	header( 'Status: 403 Forbidden'  );
-	echo "Hi there! I\'m just a plugin, not much I can do when called directly.";
+	header(  'Status: 403 Forbidden' );
 	exit;
 }
 
 if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
-//	wp_die( __( 'This plugin requires PHP 5.2.4 or greater: Activation Stopped! Please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)' ) ); # uncomment it if you prefer die notification
+// wp_die( __( 'This plugin requires PHP 5.2.4 or greater: Activation Stopped! Please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' ) ); # uncomment it if you prefer die notification
 
-			function dismiss_gutenberg_nag_psd_php_version_init()
-				{
-					deactivate_plugins( plugin_basename( __FILE__ ) );
-				}
-			add_action( 'admin_init', 'dismiss_gutenberg_nag_psd_php_version_init', 0 );
+function ddwtgn_psd_php_version_init() {
+	deactivate_plugins( plugin_basename( __FILE__ ) );
+}
+add_action( 'admin_init', 'ddwtgn_psd_php_version_init', 0 );
 
-			function dismiss_gutenberg_nag_ant_php_version_init()
-				{
+function ddwtgn_ant_php_version_init() {
 ?>
 <div class="notice notice-error is-dismissible">
-<p>This plugin requires PHP 5.2.4 or greater: please note that the best choice is PHP 5.6+ ~ 7.0+ (old stable branche) or 7.1+ (current stable branche)</p>
+<p><?php _e( 'This plugin requires PHP 5.2.4 or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' );?></p>
 </div>
 <div class="notice notice-warning is-dismissible">
-<p>Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.</p>
+<p><?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?></p>
 </div>
 <?php 
-				}
-			add_action( 'admin_notices', 'dismiss_gutenberg_nag_ant_php_version_init' );
+}
+add_action( 'admin_notices', 'ddwtgn_ant_php_version_init' );
 }
 else {
 global $wp_version;
@@ -95,28 +94,38 @@ include( ABSPATH . WPINC . '/version.php' );
 $version = str_replace( '-src', '', $wp_version );
 
 if ( version_compare( $version, '4.8', '<' ) ) {
-//	wp_die( __( 'This plugin requires WordPress 4.8+ or greater: Activation Stopped!' ) );                                                                                                     # uncomment it if you prefer die notification
+// wp_die( __( 'This plugin requires WordPress 4.8+ or greater: Activation Stopped! Please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3', 'dismiss-gutenberg-nag' ) );               # uncomment it if you prefer die notification
 
-			function dismiss_gutenberg_nag_psd_wp_version_init()
-				{
-					deactivate_plugins( plugin_basename( __FILE__ ) );
-				}
-			add_action( 'admin_init', 'dismiss_gutenberg_nag_psd_wp_version_init', 0 );
+function ddwtgn_psd_wp_version_init() {
+	deactivate_plugins( plugin_basename( __FILE__ ) );
+}
+add_action( 'admin_init', 'ddwtgn_psd_wp_version_init', 0 );
 
-			function dismiss_gutenberg_nag_ant_wp_version_init()
-				{
+function ddwtgn_ant_wp_version_init() {
 ?>
 <div class="notice notice-error is-dismissible">
-<p>This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3</p>
+<p><?php _e( 'This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3', 'dismiss-gutenberg-nag' );?></p>
 </div>
 <div class="notice notice-warning is-dismissible">
-<p>Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.</p>
+<p><?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?></p>
 </div>
 <?php 
-				}
-			add_action( 'admin_notices', 'dismiss_gutenberg_nag_ant_wp_version_init' );
+}
+add_action( 'admin_notices', 'ddwtgn_ant_wp_version_init' );
 }
 else {
+
+/**
+ * Load Plugin Textdomain
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
+ */
+function ddwtgn_load_plugin_textdomain() {
+	load_plugin_textdomain( 'dismiss-gutenberg-nag', false, basename( dirname( __FILE__ ) ) . '/languages' );
+}
+add_filter( 'plugins_loaded', 'ddwtgn_load_plugin_textdomain' );
 
 /**
  * Adds Plugin Row Meta Build
@@ -128,7 +137,7 @@ else {
 function ddwtgn_adds_row_meta_build( $plugin_meta, $plugin_file ) {
 	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$plugin_meta[0] .= ' | ' . __( 'Build', 'dismiss-gutenberg-nag' ) . ' ' . __( '2017-11-05', 'dismiss-gutenberg-nag' );
+			$plugin_meta[ 0 ] .= ' | ' . __( 'Build', 'dismiss-gutenberg-nag' ) . ' ' . __( '2017-11-05', 'dismiss-gutenberg-nag' );
 		}
 	return $plugin_meta;
 }
@@ -144,7 +153,7 @@ add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_build', 10, 4 );
 function ddwtgn_adds_row_meta_links( $plugin_meta, $plugin_file ) {
 	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$plugin_meta[4] .= '<a href="https://github.com/luciano-croce/dismiss-gutenberg-nag/">' . __( 'Visit plugin site', 'dismiss-gutenberg-nag' ) . '</a>';
+			$plugin_meta[] .= '<a href="https://github.com/luciano-croce/dismiss-gutenberg-nag/">' . __( 'Visit plugin site', 'dismiss-gutenberg-nag' ) . '</a>';
 		}
 	return $plugin_meta;
 }
@@ -158,22 +167,21 @@ add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_links', 10, 2 );
  * @since   1.0.0 (Build 2017-10-30)
 */
 function ddwtgn_adds_action_links( $plugin_meta, $plugin_file ) {
-	if ( $plugin_file == plugin_basename( __FILE__ ) )
 		{
-			$plugin_meta[3] .= '<a href="index.php" style="color:#3db634">' . __( 'Dashboard', 'dismiss-gutenberg-nag' ) . '</a>';
+			$plugin_meta[] .= '<a href="index.php" style="color:#3db634">' . __( 'Dashboard', 'dismiss-gutenberg-nag' ) . '</a>';
 		}
 	return $plugin_meta;
 }
-add_filter( 'plugin_action_links', 'ddwtgn_adds_action_links', 10, 6 );                                                                                                                    # uncomment to enable this customization
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'ddwtgn_adds_action_links', 10, 4 );                                                                                                                        # comment or uncomment to enable or disable this customization
 
 /**
- * Dismiss Dashboard Widget "try Gutenberg" Nag
+ * Dismiss Dashboard Widget "try Gutenberg" Nag - ddwtgn
  *
- * This plugin use add_filter and not add_action.
+ * This, is different from the other similar plugins, because uses the filter hook, and not the action hook.
  *
  * Filters should filter information, thus receiving information/data, applying the filter and returning information/data,
- * and then used. However, filters are still action hooks. WordPress defines add_filter as "hooks a function to a specific
- * filter action", and add_action as "hooks a function on to a specific action".
+ * and then used. However, filters are still action hooks. WordPress defines add_filter/remove_filter as "hooks a function
+ * to a specific filter action", and add_action/remove_action as "hooks a function on to a specific action".
  *
  * @author  Luciano Croce <luciano.croce@gmail.com>
  * @version 1.0.1 (Build 2017-11-05)
