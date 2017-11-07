@@ -1,0 +1,60 @@
+# Translation of Plugins - Dismiss &quot;try Gutenberg&quot; Nag Dashboard Widget - Development (trunk) in Italian
+# This file is distributed under the same license as the Plugins - Dismiss &quot;try Gutenberg&quot; Nag Dashboard Widget - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: it\n"
+"Project-Id-Version: Plugins - Dismiss &quot;try Gutenberg&quot; Nag Dashboard Widget - Development (trunk)\n"
+
+#: dismiss-gutenberg-nag.php:107
+msgid "This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3"
+msgstr "Questo plugin richiede WordPress 4.8+ o superiore: si prega di notare che il fastidioso widget "prova Gutenberg" della bacheca, è stato introdotto da WordPress 4.9-beta3"
+
+#: dismiss-gutenberg-nag.php:85 dismiss-gutenberg-nag.php:110
+msgid "Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>."
+msgstr "Plugin Rimuovi Gutenberg Nag <strong>disattivato</strong>."
+
+#: dismiss-gutenberg-nag.php:82
+msgid "This plugin requires PHP 5.2.4 or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch)"
+msgstr "Questo plugin richiede PHP 5.2.4 o superiore: si prega di notare che una buona scelta è PHP 5.6+ ~ 7.0+ (ramo stabile precedente) o PHP 7.1+ (ramo stabile corrente)."
+
+#: dismiss-gutenberg-nag.php:171
+msgid "Dashboard"
+msgstr "Bacheca"
+
+#: dismiss-gutenberg-nag.php:140
+msgid "2017-11-05"
+msgstr "05/11/2017"
+
+#: dismiss-gutenberg-nag.php:140
+msgid "Build"
+msgstr "Rilasciata"
+
+#: dismiss-gutenberg-nag.php:156
+msgid "Visit plugin site"
+msgstr "Visita la homepage del plugin"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/luciano-croce/dismiss-gutenberg-nag/"
+msgstr "https://github.com/luciano-croce/dismiss-gutenberg-nag/"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/luciano-croce/"
+msgstr "https://github.com/luciano-croce/"
+
+#. Author of the plugin/theme
+msgid "Luciano Croce"
+msgstr "Luciano Croce"
+
+#. Description of the plugin/theme
+msgid "Dismiss \"<strong>try Gutenberg</strong>\" nag, dashboard widget, when is activated, or automatically, if it is in mu-plugins directory."
+msgstr "Rimuove il fastidioso widget "<strong>prova Gutenberg</strong>" dalla bacheca, quando viene attivato, o automaticamente, se è inserito nella directory mu-plugins."
+
+#. Plugin Name of the plugin/theme
+msgid "Dismiss Gutenberg Nag"
+msgstr "Rimuovi Gutenberg Nag"
