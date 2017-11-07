@@ -6,6 +6,7 @@ Release Date: November 05, 2017
     Updated readme.txt according new changes
     Updated some descriptions to reflect code changes
     Preemptive Support for WordPress 5.0-alpha
+    Preemptive Support for WordPress 4.9.1-alpha
     Compatible with WordPress 4.9-RC1-42115 or greater
     Make sure that plugin run only under WP 4.8+ or greater
     Renamed text domain slug
