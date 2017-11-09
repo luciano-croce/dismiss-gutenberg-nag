@@ -6,11 +6,12 @@ Release Date: November 05, 2017
     Changed plugin description
     Renamed plugin slug
     Renamed text domain slug
-    Preemptive Support for WordPress 4.9.1-alpha
-    Compatible with WordPress 4.9-RC1-42115 or later
-    Make sure that plugin run only under WP 4.8+ or greater
-    Make sure that plugin run only under PHP 5.2.4 or greater
-    Updated some descriptions to reflect code changes
+    Preemptive Support for WP 5.0-alpha
+    Preemptive Support for WP 4.9.1-alpha
+    Compatible with WordPress 4.9-RC2-42115
+    Make sure that run under WP 4.8+ or greater
+    Make sure that run under PHP 5.2.4 or greater
+    Updated descriptions to reflect changes
     Updated screenshots according new changes
     Updated readme.txt according new changes
 
@@ -25,5 +26,7 @@ Release Date: October 30, 2017
     Compatible with 1st step installation setup
     Compatible with GlotPress translations
     Compatible with Gutenberg block editor
+    Compatible with MariaDB 5.5+ or greater
+    Compatible with MySQL 5.0+ or greater
     Requires WordPress Version 4.8+ or greater
     Requires PHP Version 5.2.4 or greater
