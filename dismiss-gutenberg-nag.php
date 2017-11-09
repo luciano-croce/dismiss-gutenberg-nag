@@ -69,7 +69,7 @@ if ( !function_exists( 'add_action' ) )	{
 }
 
 if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
-// wp_die( __( 'This plugin requires PHP 5.2.4 or greater: Activation Stopped! Please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' ) ); # uncomment it if you prefer die notification
+// wp_die( __( 'This plugin requires PHP 5.2.4+ or greater: Activation Stopped! Please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' ) ); # uncomment it if you prefer die notification
 
 function ddwtgn_psd_php_version_init() {
 	deactivate_plugins( plugin_basename( __FILE__ ) );
@@ -79,7 +79,7 @@ add_action( 'admin_init', 'ddwtgn_psd_php_version_init', 0 );
 function ddwtgn_ant_php_version_init() {
 ?>
 <div class="notice notice-error is-dismissible">
-<p><?php _e( 'This plugin requires PHP 5.2.4 or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' );?></p>
+<p><?php _e( 'This plugin requires PHP 5.2.4+ or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' );?></p>
 </div>
 <div class="notice notice-warning is-dismissible">
 <p><?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?></p>
