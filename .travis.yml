@@ -16,6 +16,7 @@ php:
   - 5.4
 
 env:
+  - WP_VERSION=latest WP_MULTISITE=0 DB=mysql
   - WP_VERSION=latest WP_MULTISITE=0
   - WP_VERSION=latest WP_MULTISITE=1
   - WP_VERSION=trunk WP_MULTISITE=0
@@ -26,6 +27,12 @@ env:
   - WP_VERSION=3.8 WP_MULTISITE=1
   - DB=mysql
   - DB=mariadb
+
+os:
+  - linux
+  - osx
+  - unix
+  - windows
 
 services:
   - mysql
