@@ -124,6 +124,7 @@ else {
  */
 function ddwtgn_load_plugin_textdomain() {
 	load_plugin_textdomain( 'dismiss-gutenberg-nag', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	load_muplugin_textdomain( 'dismiss-gutenberg-nag', basename( dirname(__FILE__) ) . '/languages' );
 }
 add_filter( 'plugins_loaded', 'ddwtgn_load_plugin_textdomain' );
 
