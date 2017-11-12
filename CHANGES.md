@@ -7,8 +7,7 @@ Release Date: November 05, 2017
     Renamed plugin slug
     Renamed text domain slug
     Preemptive Support for WP 5.0-alpha
-    Preemptive Support for WP 4.9.1-alpha
-    Compatible with WordPress 4.9-RC2-42115
+    Compatible with WordPress 4.9-RC2
     Make sure that run under WP 4.8+ or greater
     Make sure that run under PHP 5.2.4 or greater
     Updated descriptions to reflect changes
@@ -22,6 +21,7 @@ Release Date: October 30, 2017
     First initial release of the plugin
     Use the filter hook and not the action hook
     Compatible with WordPress 4.9-beta3
+    Compatible with WordPress Multisite
     Compatible with mu-plugins directory
     Compatible with 1st step installation setup
     Compatible with GlotPress translations
