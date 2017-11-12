@@ -64,31 +64,52 @@ if ( !function_exists( 'add_action' ) )	{
 	header( 'HTTP/1.1 403 Forbidden' );
 	header( 'HTTP/1.2 403 Forbidden' );
 	header( 'HTTP/1.3 403 Forbidden' );
-	header(  'Status: 403 Forbidden' );
-	exit;
+	header( 'Status: 403 Forbidden'  );
+		exit;
 }
 
 if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
-// wp_die( __( 'This plugin requires PHP 5.2.4+ or greater: Activation Stopped! Please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' ) ); # uncomment it if you prefer die notification
+// wp_die( __( 'This plugin requires PHP 5.2.4 or greater: Activation Stopped! Please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' ) ); # uncomment it if you prefer die notification
 
+/**
+ * Make sure that run under PHP 5.2.4 or greater
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
+ */
 function ddwtgn_psd_php_version_init() {
 	deactivate_plugins( plugin_basename( __FILE__ ) );
 }
 add_action( 'admin_init', 'ddwtgn_psd_php_version_init', 0 );
 
+/**
+ * Show Admin Notice when PHP version not meet minimum requirements requested
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
+ */
 function ddwtgn_ant_php_version_init() {
 ?>
-<div class="notice notice-error is-dismissible">
-<p><?php _e( 'This plugin requires PHP 5.2.4+ or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' );?></p>
+<div class="notice notice-info is-dismissible">
+<p>
+<?php _e( 'This plugin requires PHP 5.2.4 or greater: please note that a good choice is PHP 5.6+ ~ 7.0+ (previous stable branch) or PHP 7.1+ (current stable branch).', 'dismiss-gutenberg-nag' );?>
+</p>
 </div>
 <div class="notice notice-warning is-dismissible">
-<p><?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?></p>
+<p>
+<?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?>
+<script>window.jQuery && jQuery( function( $ ) { $( 'div#message.updated' ).remove(); } );</script>                                                                                                                           <!-- This script remove update message when plugin is auto deactivated -->
+</p>
 </div>
 <?php 
 }
 add_action( 'admin_notices', 'ddwtgn_ant_php_version_init' );
+add_action( 'network_admin_notices',  'ddwtgn_ant_php_version_init' );
 }
 else {
+
 global $wp_version;
 include( ABSPATH . WPINC . '/version.php' );
 $version = str_replace( '-src', '', $wp_version );
@@ -96,22 +117,42 @@ $version = str_replace( '-src', '', $wp_version );
 if ( version_compare( $version, '4.8', '<' ) ) {
 // wp_die( __( 'This plugin requires WordPress 4.8+ or greater: Activation Stopped! Please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3', 'dismiss-gutenberg-nag' ) );               # uncomment it if you prefer die notification
 
+/**
+ * Make sure that run under WP 3.8+ or greater
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
+ */
 function ddwtgn_psd_wp_version_init() {
 	deactivate_plugins( plugin_basename( __FILE__ ) );
 }
 add_action( 'admin_init', 'ddwtgn_psd_wp_version_init', 0 );
 
+/**
+ * Show Admin Notice when WP version not meet minimum requirements requested
+ *
+ * @author  Luciano Croce <luciano.croce@gmail.com>
+ * @version 1.0.1 (Build 2017-11-05)
+ * @since   1.0.0 (Build 2017-10-30)
+ */
 function ddwtgn_ant_wp_version_init() {
 ?>
-<div class="notice notice-error is-dismissible">
-<p><?php _e( 'This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3', 'dismiss-gutenberg-nag' );?></p>
+<div class="notice notice-info is-dismissible">
+<p>
+<?php _e( 'This plugin requires WordPress 4.8+ or greater: please note that the Gutenberg Dashboard Widget Nag was introduced since WordPress 4.9-beta3', 'dismiss-gutenberg-nag' );?>
+</p>
 </div>
 <div class="notice notice-warning is-dismissible">
-<p><?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?></p>
+<p>
+<?php _e( 'Plugin Dismiss Gutenberg Nag <strong>deactivated</strong>.', 'dismiss-gutenberg-nag' );?>
+<script>window.jQuery && jQuery( function( $ ) { $( 'div#message.updated' ).remove(); } );</script>                                                                                                                           <!-- This script remove update message when plugin is auto deactivated -->
+</p>
 </div>
 <?php 
 }
 add_action( 'admin_notices', 'ddwtgn_ant_wp_version_init' );
+add_action( 'network_admin_notices',  'ddwtgn_ant_wp_version_init' );
 }
 else {
 
@@ -124,7 +165,7 @@ else {
  */
 function ddwtgn_load_plugin_textdomain() {
 	load_plugin_textdomain( 'dismiss-gutenberg-nag', false, basename( dirname( __FILE__ ) ) . '/languages' );
-	load_muplugin_textdomain( 'dismiss-gutenberg-nag', basename( dirname(__FILE__) ) . '/languages' );
+	load_muplugin_textdomain( 'dismiss-gutenberg-nag', basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_filter( 'plugins_loaded', 'ddwtgn_load_plugin_textdomain' );
 
@@ -142,7 +183,7 @@ function ddwtgn_adds_row_meta_build( $plugin_meta, $plugin_file ) {
 		}
 	return $plugin_meta;
 }
-add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_build', 10, 4 );
+add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_build', 10, 4 );                                                                                                                                                         # comment or uncomment to enable or disable this customization
 
 /**
  * Adds Plugin Row Meta Links
@@ -158,7 +199,7 @@ function ddwtgn_adds_row_meta_links( $plugin_meta, $plugin_file ) {
 		}
 	return $plugin_meta;
 }
-add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_links', 10, 2 );
+add_filter( 'plugin_row_meta', 'ddwtgn_adds_row_meta_links', 10, 2 );                                                                                                                                                         # comment or uncomment to enable or disable this customization
 
 /**
  * Adds Plugin Action Links
@@ -174,6 +215,7 @@ function ddwtgn_adds_action_links( $plugin_meta, $plugin_file ) {
 	return $plugin_meta;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'ddwtgn_adds_action_links', 10, 4 );                                                                                                                        # comment or uncomment to enable or disable this customization
+add_filter( 'network_admin_plugin_action_links_' . plugin_basename( __FILE__ ), 'ddwtgn_adds_action_links', 10, 4 );                                                                                                          # comment or uncomment to enable or disable this customization
 
 /**
  * Dismiss Dashboard Widget "try Gutenberg" Nag - ddwtgn
