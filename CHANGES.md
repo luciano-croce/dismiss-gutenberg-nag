@@ -7,8 +7,10 @@ Release Date: November 05, 2017
     Renamed plugin slug
     Renamed text domain slug
     Preemptive Support for WP 5.0-alpha
-    Compatible with WordPress 4.9-RC3
-    Make sure that run under WP 4.8+ or greater
+    Compatible with WordPress 4.9.1-alpha
+    Compatible with WordPress 4.9
+    Compatible with WordPress 4.9-beta3    
+    Make sure that run under WP 4.9-beta3 or greater
     Make sure that run under PHP 5.2.4 or greater
     Updated descriptions to reflect changes
     Updated screenshots according new changes
@@ -28,6 +30,5 @@ Release Date: October 30, 2017
     Compatible with Gutenberg block editor
     Compatible with MariaDB 5.5+ or greater
     Compatible with MySQL 5.0+ or greater
-    Requires WordPress Version 4.8+ or greater
+    Requires WordPress Version 4.9-beta3 or greater
     Requires PHP Version 5.2.4 or greater
-
