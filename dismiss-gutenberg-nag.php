@@ -96,8 +96,9 @@ Requires WP:       4.9-beta3
 	 *
 	 * 1.0.5 Expected 5th future update in fourth quarter 2018
 	 *
-	 * 1.0.4-beta The 4th update is available for testing on [GitHub](https://github.com/luciano-croce/dismiss-gutenberg-nag/)
+	 * Current latest stable update is available on [WordPress Plugin Directory](https://https://wordpress.org/plugins/dismiss-gutenberg-nag/)
 	 * 
+	 * 1.0.3 (Build 2018-08-02) 3rd Update
 	 * 1.0.2 (Build 2017-03-22) 2nd Update
 	 * 1.0.1 (Build 2017-11-05) 1st Update
 	 *
@@ -106,7 +107,7 @@ Requires WP:       4.9-beta3
 	 * @package    WordPress\Plugin
 	 * @subpackage Gutenberg\Dismiss_Gutenberg_Nag
 	 * @link       https://wordpress.org/plugins/dismiss-gutenberg-nag/ - Hosted on wordpress.org repository
-	 * @version    1.0.3 (Build 2018-08-02) Latest Release
+	 * @version    1.0.4-beta (Build 2018-08-05) Beta Release
 	 * @since      1.0.0 (Build 2017-10-30) Initial Release
 	 * @author     Luciano Croce <luciano.croce@gmail.com>
 	 * @copyright  2017-2018 - Luciano Croce
@@ -815,7 +816,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	 * Add uninstall routine (only for standalone activation).
 	 *
 	 * @author  Luciano Croce <luciano.croce@gmail.com>
-	 * @version 1.0.4 (Build 2017-08-04)
+	 * @version 1.0.4-beta (Build 2018-08-05)
 	 * @since   1.0.0 (Build 2017-10-30)
 	 */
 	function dismiss_gutenberg_nag_uninstall() {
