@@ -597,7 +597,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 			<span class='description'>
 				<?php
 					echo str_repeat( '&nbsp;', 5 );
-					_e( '"try Gutenberg" callout will be dismissed for all user capability type.. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
+					_e( '"try Gutenberg" callout will be dismissed for all user capability type. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
 				 ?>
 			</span>
 		</label>
@@ -697,7 +697,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 			<span class='description'>
 			<?php
 					echo str_repeat( '&nbsp;', 5 );
-					_e( '"try Gutenberg" callout is dismissed for all user capability type.. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
+					_e( '"try Gutenberg" callout is dismissed for all user capability type. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
 			 ?>
 			</span>
 		</label><br />
