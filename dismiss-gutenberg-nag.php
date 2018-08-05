@@ -550,7 +550,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
  ?>
  	<a name='dismiss-gutenberg-nag-options'></a>
 	<p>
-		<?php _e( 'These options allow to control and configure when the "<strong>try Gutenberg</strong>" is dismissed, or showed, based on capability type. By <u>default</u> is <u>totally dismissed</u> for all users.', 'dismiss-gutenberg-nag' ) ?>
+		<?php _e( 'These options allow to control and configure when the "<strong>try Gutenberg</strong>" is dismissed, or showed, based on capability type.<br /><br />By <u>default</u> is <u>totally dismissed</u> for all users.', 'dismiss-gutenberg-nag' ) ?>
 	</p>
 	<script>
 		// Control whether the other settings are disabled depending on whether "Dismiss Always" is "Yes" a/o "No"
