@@ -32,9 +32,9 @@ For now is not necessary also remove completely Gutenberg because it is not embe
 
 ### Tips
 
-* <strong>Tips</strong>: a neat trick, is to put this single file <strong>dismiss-gutenberg-nag.php</strong> (not its parent directory) in the <strong>/wp-content/mu-plugins/</strong> directory (create it if not exists) so you won’t even have to enable it, and will be loaded by default, also, since first step installation of WordPress setup!
+* A neat trick, is to put this single file <strong>dismiss-gutenberg-nag.php</strong> (not its parent directory) in the <strong>/wp-content/mu-plugins/</strong> directory (create it if not exists) so you won’t even have to enable it, and will be loaded by default, also, since first step installation of WordPress setup!
 
-* Also, for translation functionality, put all files of the single languages (dismiss-gutenberg-nag-en_US.mo for example) that you need (not its parent directory) in the /wp-content/mu-plugins/ directory (create it if not exists) and will be loaded by default, they also, since first step installation of WordPress setup!
+* Also, for translation functionality, put all files of the single languages, <strong>dismiss-gutenberg-nag-en_US.mo</strong> for example, that you need (not its parent directory) in the <strong>/wp-content/mu-plugins/</strong> directory (create it if not exists) and will be loaded by default, they also, since first step installation of WordPress setup!
 
 ### Explanation
 
