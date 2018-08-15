@@ -198,7 +198,6 @@ function ddwtgn_psd_php_wp_version_init() {
  */
 if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
 
-
 	if ( version_compare( $version, '2.0', '>=' ) ) {
 		add_action( 'admin_notices', 'ddwtgn_ant_php_version_init' );
 	}
@@ -446,7 +445,6 @@ else {
 		remove_filter( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
 	}
 
-
 	/**
 	 * Add uninstall routine (only for standalone activation).
 	 *
@@ -459,7 +457,6 @@ else {
 			return;
 
 		delete_option( 'dismiss_gutenberg_nag_options' );
-
 
 		if ( version_compare( $version, '2.8', '>=' ) ) {
 			delete_transient( 'dismiss_gutenberg_nag_transients' );
@@ -698,8 +695,6 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 //				var rows = yes_always.parents( 'table' ).find( 'tr' ).not( ':first' ).not( ':last' );
 				var rows = yes_always.parents( 'table' ).find( 'tr:gt( 1 )' );
 
-
-
 				if ( yes_always.is( ':checked' ) ) {
 					rows.find( 'input' ).attr( 'disabled', 'disabled' );
 				}
@@ -919,9 +914,6 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 			'specific_users' => array(),
 			'disable_gutenberg' => 'yes'
 		) );
-
-
-
 
 		return;
 
