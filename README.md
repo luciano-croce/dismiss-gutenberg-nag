@@ -24,7 +24,7 @@ Once activated adds new options to the Settings -> Writing screen:
 
 By default try Gutenberg is displayed only for users with administrator capability in WordPress 4.9.8 but when the Gutenberg plugin is installed and activated, is displayed for all user capability type.
 
-An option configuration page is added to the settings -> writing menu so that you can set the callout display according to your needs. <strong>This is the most complete plugin for configuring and removing the try Gutenberg callout.</strong> Stick to the screenshots for more details.
+An option configuration page is added to the settings -> writing menu so that you can set the callout display according to your needs. <strong>This is the most complete plugin for configuring and removing the try Gutenberg callout.</strong>
 
 For now is not necessary also remove completely Gutenberg because it is not embedded on core of WordPress 4.9.8 but is only availabe as plugin. Ownever I’m working on future features of new configuration option settings to add this possibility.
 
