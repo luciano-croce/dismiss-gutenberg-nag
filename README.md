@@ -38,11 +38,11 @@ For now is not necessary also remove completely Gutenberg because it is not embe
 
 ### Explanation
 
-* <strong>Explanation</strong>: this, is <strong>different from the other similar plugins</strong>, because <strong>uses the filter hook, and not the action hook</strong>. Filters should filter information, thus receiving information/data, applying the filter and returning information/data, and then used. However, filters are still action hooks. WordPress defines add_filter/remove_filter as "hooks a function to a specific filter action", and add_action/remove_action as "hooks a function on to a specific action".
+* This, is <strong>different from the other similar plugins</strong>, because <strong>uses the filter hook, and not the action hook</strong>. Filters should filter information, thus receiving information/data, applying the filter and returning information/data, and then used. However, filters are still action hooks. WordPress defines add_filter/remove_filter as "hooks a function to a specific filter action", and add_action/remove_action as "hooks a function on to a specific action".
 
 ### Translation
 
-Translated by: Luciano Croce
+Translated by: [Luciano Croce](https://profiles.wordpress.org/luciano-croce/).
 
 Available in American, Australian, Belgian FR, Brazilian, Canadian EN, Canadian FR, Catalan, Chilean, Colombian, English, French, German, Italian, New Zealander, Peruvian, Portuguese, Spanish, Swiss DE, Venezuelan and more other languages in becoming.
 
