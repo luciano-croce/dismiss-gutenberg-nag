@@ -236,7 +236,8 @@ if ( version_compare( PHP_VERSION, '5.2.4', '<' ) ) {
 		include( ABSPATH . WPINC . '/version.php' );
 		$version = str_replace( '-src', '', $wp_version );
 		if ( version_compare( $version, '2.0', '>=' ) ) {
-		if ( version_compare( $version, '2.5', '<' ) ) { _e( 'Plugin "Dismiss Gutenberg Nag" <strong>can not be deactivate automatically</strong>. It is not compatible with this installation. Deactivate it manually!', 'dismiss-gutenberg-nag' ); }
+		if ( version_compare( $version, '2.5', '<' ) ) {
+		_e( 'Plugin "Dismiss Gutenberg Nag" <strong>can not be deactivate automatically</strong>. It is not compatible with this installation. Deactivate it manually!', 'dismiss-gutenberg-nag' ); }
 		?> <!-- Thanks to Garrett Hyder (garrett-eclipse) for this text suggestion. -->
 		<?php 
 		}
@@ -387,9 +388,9 @@ else {
 		if ( $plugin_file == plugin_basename( __FILE__ ) )
 			{
 				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) );    # New implementation that use defined default variable.
-//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( '2018-08-06' ) );                              # Thanks to Garrett Hyder garrett-eclipse for this contribute.
+//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( '2018-08-06' ) );                              # Thanks to Garrett Hyder (garrett-eclipse) for this contribute.
 //				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . __( '2018-08-06', 'dismiss-gutenberg-nag' );                                                      # Uncomment it on incompatibility case but is not localised.
-				$plugin_meta[ 0 ] .= ' | ' . __( 'Language', 'dismiss-gutenberg-nag' ) . ' ' . get_locale();											                                         # Thanks to Pascal Birchler swissspidy for this contribute.
+				$plugin_meta[ 0 ] .= ' | ' . __( 'Language', 'dismiss-gutenberg-nag' ) . ' ' . get_locale();											                                         # Thanks to Pascal Birchler (swissspidy) for this contribute.
 			}
 		return $plugin_meta;
 	}
@@ -686,7 +687,13 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		?>
 		<a name='dismiss-gutenberg-nag_options'></a>
 		<p>
-		<?php _e( 'These options allow to control and configure when the "<strong>try Gutenberg</strong>" is dismissed, or showed, based on capability type.<br /><br />By <u>default</u> is <u>totally dismissed</u> for all users.', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'These options allow to control and configure when the "<strong>try Gutenberg</strong>" is dismissed, or showed, based on capability type.', 'dismiss-gutenberg-nag' )
+		?>
+		</p>
+		<p>
+		<?php _e( 'By <u>default</u> is <u>totally dismissed</u> for all users.', 'dismiss-gutenberg-nag' )
+		?>
 		</p>
 		<script>
 			// Control whether the other settings are disabled depending on whether "Dismiss Always" is "Yes" a/o "No"
@@ -725,10 +732,12 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	function all_users_setting() {
 		$option = get_option( 'dismiss_gutenberg_nag_options' );
 		?>
-		<p id="dismiss_gutenberg_nag_options_always_options" style="margin: 0;">
+		<p id="dismiss_gutenberg_nag_options_always_options" style="margin:0">
 		<input type="radio" name="dismiss_gutenberg_nag_options[all_users]" id="dismiss_gutenberg_nag_options_always_yes" value="yes"<?php checked( $option['all_users'], 'yes', true )?> />
 		<label for="dismiss_gutenberg_nag_options_all_users_yes">
-		<?php _e( 'Yes', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'Yes', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -739,7 +748,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<br />
 		<input type="radio" name="dismiss_gutenberg_nag_options[all_users]" id="dismiss_gutenberg_nag_options_always_no" value="no"<?php checked( $option['all_users'], 'no', true )?> />
 		<label for="dismiss_gutenberg_nag_options_all_users_yes">
-		<?php _e( 'No', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'No', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -749,7 +760,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		</label><br />
 		<br />
 		<span class='description'>
-		<?php _e( 'When the other options in this section not allow "try Gutenberg" to be shown, this impostations not have effect, and callout is dismissed.', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'When the other options in this section not allow "try Gutenberg" to be shown, this impostations not have effect, and callout is dismissed.', 'dismiss-gutenberg-nag' )
+		?>
 		</span>
 		</p>
 		<?php return;
@@ -765,7 +778,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	function specific_users_setting() {
 		$option = get_option( 'dismiss_gutenberg_nag_options' );
 		?>
-		<p id="dismiss_gutenberg_nag_options_specific_users_options" style="margin: 0;">
+		<p id="dismiss_gutenberg_nag_options_specific_users_options" style="margin:0">
 		<?php 
 		foreach ( get_users() as $user ) {
 			if ( ! user_can( $user->ID, 'edit_posts' ) ) {
@@ -780,11 +793,15 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<?php }?>
 		<br />
 		<span class='description'>
-		<?php _e( 'When this option is enabled "try Gutenberg" callout will be dismissed for selected users that have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'When this option is enabled "try Gutenberg" callout will be dismissed for selected users that have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
+		?>
 		</span><br />
 		<br />
 		<span class='description'>
-		<?php _e( 'The callout can be configured simultaneously, and separately, for any user capacity types, with or without edit post (edit_post) capability. ', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'The callout can be configured simultaneously, and separately, for any user capacity types, with or without edit post (edit_post) capability. ', 'dismiss-gutenberg-nag' )
+		?>
 		</span>
 		</p>
 		<?php return;
@@ -800,10 +817,12 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	function non_edit_posts_setting() {
 		$option = get_option( 'dismiss_gutenberg_nag_options' );
 		?>
-		<p id="dismiss_gutenberg_nag_options_for_non_edit_posts_options" style="margin: 0;">
+		<p id="dismiss_gutenberg_nag_options_for_non_edit_posts_options" style="margin:0">
 		<input type="radio" name="dismiss_gutenberg_nag_options[non_edit_posts]" id="dismiss_gutenberg_nag_options_non_edit_posts_yes" value="yes"<?php checked( $option['non_edit_posts'], 'yes', true )?> />
 		<label for="dismiss_gutenberg_nag_options_non_edit_posts_yes">
-		<?php _e( 'Yes', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'Yes', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -813,7 +832,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		</label><br />
 		<input type="radio" name="dismiss_gutenberg_nag_options[non_edit_posts]" id="dismiss_gutenberg_nag_options_non_edit_posts_no" value="no"<?php checked( $option['non_edit_posts'], 'no', true )?> />
 		<label for="dismiss_gutenberg_nag_options_non_edit_posts_yes">
-		<?php _e( 'No', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'No', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -823,7 +844,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		</label><br />
 		<br />
 		<span class='description'>
-		<?php _e( 'When this option is enabled "try Gutenberg" callout will be dismissed for users that not have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'When this option is enabled "try Gutenberg" callout will be dismissed for users that not have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
+		?>
 		</span>
 		</p>
 		<?php return;
@@ -839,10 +862,12 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	function disable_gutenberg_setting() {
 		$option = get_option( 'dismiss_gutenberg_nag_options' );
 		?>
-		<p id="dismiss_gutenberg_nag_options_disable_gutenberg_options" style="margin: 0;">
+		<p id="dismiss_gutenberg_nag_options_disable_gutenberg_options" style="margin:0">
 		<input type="radio" name="dismiss_gutenberg_nag_options[disable_gutenberg]" id="dismiss_gutenberg_nag_options_disable_gutenberg_yes" value="yes"<?php checked( $option['disable_gutenberg'], 'yes', true )?> />
 		<label for="dismiss_gutenberg_nag_options_disable_gutenberg_yes">
-		<?php _e( 'Yes', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'Yes', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -853,7 +878,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<br />
 		<input type="radio" name="dismiss_gutenberg_nag_options[disable_gutenberg]" id="dismiss_gutenberg_nag_options_disable_gutenberg_no" value="no"<?php checked( $option['disable_gutenberg'], 'no', true )?> />
 		<label for="dismiss_gutenberg_nag_options_disable_gutenberg_no">
-		<?php _e( 'No', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'No', 'dismiss-gutenberg-nag' )
+		?>
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
@@ -863,7 +890,9 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		</label><br />
 		<br />
 		<span class='description'>
-		<?php _e( 'When the other options in this section allow "try Gutenberg" but the user has manually dismissed it, this impostations not have effect.', 'dismiss-gutenberg-nag' )?>
+		<?php 
+		_e( 'When the other options in this section allow "try Gutenberg" but the user has manually dismissed it, this impostations not have effect.', 'dismiss-gutenberg-nag' )
+		?>
 		</span>
 		</p>
 		<?php return;
