@@ -173,7 +173,6 @@ $version = str_replace( '-src', '', $wp_version );
 delete_option( "hide_try_gutenberg_callout" );
 if ( version_compare( $version, '3.0', '>=' ) ) {
 	if ( is_multisite() ) {
-		delete_blog_option( "hide_try_gutenberg_callout" );
 		delete_site_option( "hide_try_gutenberg_callout" );
 	}
 }
