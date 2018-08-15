@@ -50,6 +50,6 @@ All readable text of this plugin are code free, no HTML tags was inserted (showe
 
 ### Acknowledgements
 
-- Thanks to Andrea Gandino (andg) for preliminary Italian translation approval, before I became italian PTE of my plugins.
+- Thanks to Andrea Gandino for preliminary Italian translation approval, before I became italian PTE of my plugins.
 - Thanks to Garrett Hyder for English (Canada) translation approval, and code contributions.
 - Thanks to Pascal Birchler for code contributions.
