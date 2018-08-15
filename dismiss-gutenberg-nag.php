@@ -326,8 +326,8 @@ else {
 	 * @version 1.0.3 (Build 2017-08-02)
 	 * @since   1.0.0 (Build 2017-10-30)
 	 */
-	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION', '1.0.4' );
-	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE', '2018-08-06' );
+	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION', '1.0.5-beta' );
+	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE', '2018-08-10' );
 
 	if ( version_compare( $version, '2.7', '>=' ) ) {
 		register_uninstall_hook( __FILE__, 'dismiss_gutenberg_nag_uninstall', 0 );                                              # Remove options only when plugin was deleted and not when it is deactivate to preserve configutation.
