@@ -1,15 +1,22 @@
-1.0.4-beta
+1.0.5-beta
 
-Release Date: August 05, 2018
+Release Date: August 10, 2018
 
-    Compatible with WordPress 4.9.8
-    Work with WordPress 4.9.8
+    Code cleanup and optimization
     Improved multisite compatibility
     Improved text strings for optimise translations
-    Removed register_activation_hook for mu-plugins compatibility
+    Preemptive support for transients (when possible)
     Preemptive support for WordPress 4.9.9-alpha
     Preemptive support for WordPress 5.0-alpha
     Preemptive support for PHP 7.3+
+
+1.0.4
+
+Release Date: August 06, 2018
+
+    Compatible with WordPress 4.9.8
+    Work with WordPress 4.9.8
+    Removed register_activation_hook for mu-plugins compatibility
     NEW Add uninstall routine (only for standalone activation)
     FIXED Add missed muplugins_loaded function
 
