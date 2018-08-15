@@ -120,7 +120,10 @@ Requires WP:       4.9-beta3
 	 * @author     Luciano Croce <luciano.croce@gmail.com>
 	 * @copyright  2017-2018 - Luciano Croce
 	 * @license    https://www.gnu.org/licenses/gpl-2.0.html - GPLv2 or later.
-	 * @todo       Add some options to completely disable Gutenberg when it will be embedded in the WordPress 5.0 core - Standalone options page - Disable the integration of the Classic Editor plugin into the core of WP 4.9.8
+	 * @todo       Add some options to completely disable Gutenberg when it will be embedded in the WordPress 5.0 core
+	 *              - Standalone options page
+	 *              - Transients support when possible
+	 *              - Disable the integration of the Classic Editor plugin into the core of WP 4.9.8
 	 */
 
 /**
