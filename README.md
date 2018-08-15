@@ -28,7 +28,7 @@ An option configuration page is added to the settings -> writing menu so that yo
 
 For now is not necessary also remove completely Gutenberg because it is not embedded on core of WordPress 4.9.8 but is only availabe as plugin. Ownever I’m working on future features of new configuration option settings to add this possibility.
 
-<image>https://ps.w.org/dismiss-gutenberg-nag/assets/screenshot-3.jpg?rev=1921298</image>
+![Screenshot](https://ps.w.org/dismiss-gutenberg-nag/assets/screenshot-3.jpg?rev=1921298)
 
 ### Tips
 
@@ -50,6 +50,6 @@ All readable text of this plugin are code free, no HTML tags was inserted (showe
 
 ### Acknowledgements
 
-Thanks to Andrea Gandino (andg) for preliminary Italian translation approval, before I became italian PTE of my plugins.
-Thanks to Garrett Hyder for English (Canada) translation approval, and code contributions.
-Thanks to Pascal Birchler for code contributions.
+- Thanks to Andrea Gandino (andg) for preliminary Italian translation approval, before I became italian PTE of my plugins.
+- Thanks to Garrett Hyder for English (Canada) translation approval, and code contributions.
+- Thanks to Pascal Birchler for code contributions.
