@@ -386,7 +386,7 @@ else {
 	function ddwtgn_adds_row_meta_build( $plugin_meta, $plugin_file ) {
 		if ( $plugin_file == plugin_basename( __FILE__ ) )
 			{
-				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) );    # New implementation that use defined default variable.
+				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE ) );    # New implementation that use defined default variable.
 //				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( '2018-08-06' ) );                              # Thanks to Garrett Hyder (garrett-eclipse) for this contribute.
 //				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . __( '2018-08-06', 'dismiss-gutenberg-nag' );                                                      # Uncomment it on incompatibility case but is not localised.
 				$plugin_meta[ 0 ] .= ' | ' . __( 'Language', 'dismiss-gutenberg-nag' ) . ' ' . get_locale();											                                         # Thanks to Pascal Birchler (swissspidy) for this contribute.
