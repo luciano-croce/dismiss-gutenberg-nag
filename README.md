@@ -1,7 +1,9 @@
 # Dismiss Gutenberg Nag
 [![Build Status](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag.svg?branch=master)](https://travis-ci.org/luciano-croce/dismiss-gutenberg-nag)
 
-Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when is activated, or if it is in mu-plugins directory.
+Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when it is activated, or if it is in mu-plugins directory.
+
+Please note that Gutenberg Editor is the future of WordPress and this is just a plugin for all those who need this feature.
 
 * <strong>To date</strong>, try Gutenberg nag, preliminarily introduced in WP [4.9-beta3](https://wordpress.org/news/2017/10/wordpress-4-9-beta-3/), in WP [4.9.5-beta1-42869](https://core.trac.wordpress.org/changeset/42869/), and wp [4.9.8-beta1-43502](https://core.trac.wordpress.org/changeset/43502/) was already respectively removed in WP 4.9-beta4, in WP 4.9-RC1, in WP 4.9-RC2, in WP 4.9-RC3, in WP 4.9.0, in WP 4.9.1, in WP 4.9.2, in WP 4.9.3, in WP 4.9.4, in WP [4.9.5-beta1-42883](https://core.trac.wordpress.org/changeset/42883/), in WP 4.9.5, in WP 4.9.6, in WP 4.9.7, and in WP 5.0-alpha, <strong>is embedded in core of WP 4.9.8</strong> (2018-08-02) third quarter 2018 (The NeverEnding Story) according with this related [ticket](https://core.trac.wordpress.org/ticket/41316).
 
