@@ -1,14 +1,17 @@
 1.0.5-beta
 
-Release Date: August 10, 2018
+Release Date: October 10, 2018 (in becoming)
 
     Code cleanup and optimization
     Improved multisite compatibility
-    Improved text strings for optimise translations
+    Improved text strings for optimize translations
     Preemptive support for transients (when possible)
+    Preemptive support for Dismiss Gutemberg Editor
     Preemptive support for WordPress 4.9.9-alpha
-    Preemptive support for WordPress 5.0-alpha
+    Preemptive support for WordPress 5.0.1-alpha
+    Preemptive support for WordPress 5.1-alpha
     Preemptive support for PHP 7.3+
+    NEW Dismissed Gutemberg Demo Menu Nag
 
 1.0.4
 
@@ -16,7 +19,8 @@ Release Date: August 06, 2018
 
     Compatible with WordPress 4.9.8
     Work with WordPress 4.9.8
-    Removed register_activation_hook for mu-plugins compatibility
+    Preemptive support for WordPress 5.0-alpha
+    NEW Removed register_activation_hook for mu-plugins compatibility
     NEW Add uninstall routine (only for standalone activation)
     FIXED Add missed muplugins_loaded function
 
