@@ -6,12 +6,12 @@ Release Date: October 10, 2018 (in becoming)
     Improved multisite compatibility
     Improved text strings for optimize translations
     Preemptive support for transients (when possible)
-    Preemptive support for Dismiss Gutemberg Editor
+    Preemptive support for Dismiss Gutenberg Editor
     Preemptive support for WordPress 4.9.9-alpha
     Preemptive support for WordPress 5.0.1-alpha
     Preemptive support for WordPress 5.1-alpha
     Preemptive support for PHP 7.3+
-    NEW Dismissed Gutemberg Demo Menu Nag
+    NEW Dismissed Gutenberg Demo Menu Nag
 
 1.0.4
 
