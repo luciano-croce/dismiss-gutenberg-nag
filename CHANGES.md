@@ -1,17 +1,33 @@
+1.0.6-alpha
+
+Release Date: December 31, 2018 (final date)
+
+    Preemptive support for transients (when possible)
+    Preemptive support for Dismiss Block Editor (codename Gutenberg Editor) completely
+
 1.0.5-beta
 
-Release Date: October 10, 2018 (in becoming)
+Release Date: November 15, 2018 (in becoming)
 
     Code cleanup and optimization
     Improved multisite compatibility
     Improved text strings for optimize translations
-    Preemptive support for transients (when possible)
-    Preemptive support for Dismiss Gutenberg Editor
+    Compatible with WordPress 5.0-beta5
+    Compatible with WordPress 5.0-beta4
+    Compatible with WordPress 5.0-beta3
+    Compatible with WordPress 5.0-beta2
+    Compatible with WordPress 5.0-beta1
+    Compatible with Block Editor (codename Gutenberg Editor)
+    Compatible with Classic Editor (aka TinyMCE Editor)
     Preemptive support for WordPress 4.9.9-alpha
+    Preemptive support for WordPress 5.0.0-RC
     Preemptive support for WordPress 5.0.1-alpha
-    Preemptive support for WordPress 5.1-alpha
+    Preemptive support for WordPress 5.1.0-alpha
     Preemptive support for PHP 7.3+
     NEW Dismissed Gutenberg Demo Menu Nag
+    FIXED Block Editor (codename Gutenberg Editor) compatibility
+    FIXED Classic Editor (aka TinyMCE Editor) compatibility
+    FIXED Unexpected disabilitation of Block Editor (codename Gutenberg Editor)
 
 1.0.4
 
@@ -73,4 +89,3 @@ Release Date: October 30, 2017
     Compatible with MySQL 5.0+ or greater
     Requires WordPress Version 4.9-beta3 or greater
     Requires PHP Version 5.2.4 or greater
-
