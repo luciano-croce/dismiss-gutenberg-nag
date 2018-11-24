@@ -15,14 +15,14 @@
  *
 Plugin Name:       Dismiss Gutenberg Nag
 Plugin URI:        https://github.com/luciano-croce/dismiss-gutenberg-nag/
-Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, when it is activated, or if it is in mu-plugins directory.
-Version:           1.0.5-beta
-Requires at least: 4.9-beta3
-Tested up to:      5.0-alpha
+Description:       Dismiss "<strong>try Gutenberg</strong>" nag, dashboard widget, and demo menu, when it is activated, or if it is in mu-plugins directory.
+Version:           1.0.6-beta
+Requires at least: 4.9
+Tested up to:      5.0
 Requires PHP:      5.2.4
 Author:            Luciano Croce
 Author URI:        https://github.com/luciano-croce/
-License:           GPLv2 or later.
+License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       dismiss-gutenberg-nag
 Domain Path:       /languages
@@ -37,6 +37,8 @@ Requires WP:       4.9-beta3
  * GDPR-compliant: does not collect and store any user data.
  *
  * Super light and fast plugin, easy on server resources!
+ *
+ * This is not a replacement but just a tool for those who need it.
  *
  * Plugin approved in the repository of the plugin directory on 2017-11-05
  *
@@ -102,10 +104,10 @@ Requires WP:       4.9-beta3
 	 *
 	 * History Versions:
 	 *
-	 * 1.0.6 Expected 6th future update in fourth quarter 2018 or when Gutenberg is embedded on core.
+	 * 1.0.5 releaee is available on [WordPress Plugins Directory](https://wordpress.org/plugins/dismiss-gutenberg-nag/)
 	 *
-	 * 1.0.4 The 4th update (Build 2018-08-06) is available in the repository of WordPress Plugin Direstory [WordPress.org](https://wordpress.org/plugins/dismiss-gutenberg-nag/).
-	 * 
+	 * 1.0.5 (Build 2018-11-23) 5th Update
+	 * 1.0.4 (Build 2018-08-06) 4th Update
 	 * 1.0.3 (Build 2018-08-02) 3rd Update
 	 * 1.0.2 (Build 2017-03-22) 2nd Update
 	 * 1.0.1 (Build 2017-11-05) 1st Update
@@ -115,15 +117,15 @@ Requires WP:       4.9-beta3
 	 * @package    WordPress\Plugin
 	 * @subpackage Gutenberg\Dismiss_Gutenberg_Nag
 	 * @link       https://wordpress.org/plugins/dismiss-gutenberg-nag/ - Hosted on wordpress.org repository
-	 * @version    1.0.5 (Build 2018-08-10) Beta Release
-	 * @since      1.0.0 (Build 2017-10-30) Initial Release
+	 * @version    1.0.6-beta (Build 2018-11-24)  Latest Release
+	 * @since      1.0.0      (Build 2017-10-30) Initial Release
 	 * @author     Luciano Croce <luciano.croce@gmail.com>
 	 * @copyright  2017-2018 - Luciano Croce
 	 * @license    https://www.gnu.org/licenses/gpl-2.0.html - GPLv2 or later.
-	 * @todo       Add some options to completely disable Gutenberg when it will be embedded in the WordPress 5.0 core
+	 * @todo       Add some options to completely disable Gutenberg when it will be embedded in the WordPress 5.0+ core
 	 *              - Standalone options page
 	 *              - Transients support when possible
-	 *              - Disable the integration of the Classic Editor plugin into the core of WP 4.9.8
+	 *              - Possibility to disable the integration of the Classic Editor plugin into the core of WP 4.9.8 and 4.9.9 ?
 	 */
 
 /**
@@ -136,11 +138,28 @@ Requires WP:       4.9-beta3
  * - close the connection header
  *
  * @author  Luciano Croce <luciano.croce@gmail.com>
- * @version 1.0.1 (Build 2017-11-05)
+ * @version 1.0.2 (Build 2018-09-10)
  * @since   1.0.0 (Build 2017-10-30)
  */
-if ( ! defined( 'ABSPATH' ) ) exit;
-if ( ! defined(  'WPINC'  ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	header( 'HTTP/0.9 403 Forbidden' );
+	header( 'HTTP/1.0 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	header( 'HTTP/2.0 403 Forbidden' );
+	header( 'Status:  403 Forbidden' );
+	header( 'Connection: Close'      );
+		exit;
+}
+
+if ( ! defined( 'WPINC' ) ) {
+	header( 'HTTP/0.9 403 Forbidden' );
+	header( 'HTTP/1.0 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	header( 'HTTP/2.0 403 Forbidden' );
+	header( 'Status:  403 Forbidden' );
+	header( 'Connection: Close'      );
+		exit;
+}
 
 if ( ! function_exists( 'add_action' ) ) {
 	header( 'HTTP/0.9 403 Forbidden' );
@@ -173,6 +192,7 @@ $version = str_replace( '-src', '', $wp_version );
 delete_option( "hide_try_gutenberg_callout" );
 if ( version_compare( $version, '3.0', '>=' ) ) {
 	if ( is_multisite() ) {
+//		delete_blog_option( "hide_try_gutenberg_callout" );
 		delete_site_option( "hide_try_gutenberg_callout" );
 	}
 }
@@ -325,8 +345,8 @@ else {
 	 * @version 1.0.3 (Build 2017-08-02)
 	 * @since   1.0.0 (Build 2017-10-30)
 	 */
-	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION', '1.0.5-beta' );
-	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE', '2018-08-10' );
+	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_VERSION', '1.0.5' );
+	if ( ! defined( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE' ) ) define( 'PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE', '2018-11-23' );
 
 	if ( version_compare( $version, '2.7', '>=' ) ) {
 		register_uninstall_hook( __FILE__, 'dismiss_gutenberg_nag_uninstall', 0 );                                              # Remove options only when plugin was deleted and not when it is deactivate to preserve configutation.
@@ -353,6 +373,12 @@ else {
 	}
 
 //	add_filter( 'admin_init', 'dismiss_dashboard_widget_try_gutenberg_nag' );                                                   # Old method to remove callout for all capability type of users.
+
+//	add_filter( 'admin_init', 'dismiss_gutenberg_editor' );                                                                     # Old method to disable Block Editor (a.k.a. Gutenberg) for all capability type of users.
+
+	add_filter( 'admin_menu', 'dismiss_gutenberg_demo_menu', 999 );
+
+	add_filter( 'admin_menu', 'dismiss_gutenberg_redirect_demo', 999 );
 
 	/**
 	 * Load Plugin Textdomain.
@@ -387,9 +413,9 @@ else {
 		if ( $plugin_file == plugin_basename( __FILE__ ) )
 			{
 				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( PLUGIN_DISMISS_GUTENBERG_NAG_RELEASE ) );    # New implementation that use defined default variable.
-//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( '2018-08-06' ) );                              # Thanks to Garrett Hyder (garrett-eclipse) for this contribute.
-//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . __( '2018-08-06', 'dismiss-gutenberg-nag' );                                                      # Uncomment it on incompatibility case but is not localised.
-				$plugin_meta[ 0 ] .= ' | ' . __( 'Language', 'dismiss-gutenberg-nag' ) . ' ' . get_locale();											                                         # Thanks to Pascal Birchler (swissspidy) for this contribute.
+//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . date_i18n( get_option( 'date_format' ), strtotime( '2018-08-06' ) );                            # Thanks to Garrett Hyder (garrett-eclipse) for this contribute.
+//				$plugin_meta[ 0 ] .= ' | ' . __( 'Release',  'dismiss-gutenberg-nag' ) . ' ' . __( '2018-08-06', 'dismiss-gutenberg-nag' );                                                    # Uncomment it on incompatibility case but is not localised.
+				$plugin_meta[ 0 ] .= ' | ' . __( 'Language', 'dismiss-gutenberg-nag' ) . ' ' . get_locale();											                                       # Thanks to Pascal Birchler (swissspidy) for this contribute.
 			}
 		return $plugin_meta;
 	}
@@ -445,6 +471,40 @@ else {
 		remove_filter( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
 	}
 
+	/*
+	 * Dismiss Gutenberg Demo Menu.
+	 *
+	 * @author  Luciano Croce <luciano.croce@gmail.com>
+	 * @version 1.0.4 (Build 2018-09-12)
+	 * @since   1.0.0 (Build 2017-10-30)
+	 */
+	function dismiss_gutenberg_demo_menu() {
+//		remove_menu_page( 'gutenberg' );
+		remove_action( 'admin_menu', 'gutenberg_menu' );
+	}
+
+	/*
+	 * Dismiss Gutenberg Redirect Demo.
+	 *
+	 * @author  Luciano Croce <luciano.croce@gmail.com>
+	 * @version 1.0.5 (Build 2018-11-20)
+	 * @since   1.0.0 (Build 2017-10-30)
+	 */
+	function dismiss_gutenberg_redirect_demo() {
+		remove_action( 'admin_init', 'gutenberg_redirect_demo' );
+	}
+
+	/*
+	 * Dismiss Gutenberg Editor.
+	 *
+	 * @author  Luciano Croce <luciano.croce@gmail.com>
+	 * @version 1.0.4 (Build 2018-09-12)
+	 * @since   1.0.0 (Build 2017-10-30)
+	 */
+	function dismiss_gutenberg_editor() {
+		add_filter( 'gutenberg_can_edit_post_type', '__return_false' );
+	}
+
 	/**
 	 * Add uninstall routine (only for standalone activation).
 	 *
@@ -487,28 +547,6 @@ else {
 	}
 
 	/**
-	 *
-	 * Initialize our transients whitout use of register_activation_hook for mu-plugins compatibility.
-	 *
-	 * Please: help me to cache options with transoents when possible. Thanks!
-	 *
-	 * @return void
-	 *
-	 * @author  Luciano Croce <luciano.croce@gmail.com>
-	 * @version 1.0.5 (Build 2017-08-10) Beta
-	 * @since   1.0.0 (Build 2017-10-30)
-	 */
-//	if ( ! defined( 'dismiss_gutenberg_nag_options' ) ) define( 'dismiss_gutenberg_nag_options', 'dismiss_gutenberg_nag_transients' );
-//	$dismiss_gutenberg_nag_transients = get_option( 'dismiss_gutenberg_nag_options' );
-//	set_transient( 'dismiss_gutenberg_nag_transients', $dismiss_gutenberg_nag_transients, 300 );
-//	get_transient( 'dismiss_gutenberg_nag_transients', $dismiss_gutenberg_nag_transients, 300 );
-//	if ( ( $dismiss_gutenberg_nag_transients > ( time() - ( 300 ) ) ) )  {
-//		return;
-//	}
-//	set_transient( 'dismiss_gutenberg_nag_transients', $dismiss_gutenberg_nag_transients, 300 );
-//	update_option( 'dismiss_gutenberg_nag_options', time() );
-
-	/**
 	 * Callout Configuration Option Settings Control Panel.
 	 *
 	 * Part of above code (not all) is ported and forked from "Hide Try Gutenberg Callout" of Paul V. Biron.
@@ -535,6 +573,8 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	 */
 	function __construct() {
 		if ( is_admin() ) {
+//			add_action( 'plugins_loaded', array( $this, 'maybe_disable_for_all_users' ) );      # New method to disable Block Editor (a.k.a. Gutenberg) for all capability type of users.
+//			add_action( 'muplugins_loaded', array( $this, 'maybe_disable_for_all_users' ) );    # New method to disable Block Editor (a.k.a. Gutenberg) for all capability type of users.
 			add_action( 'plugins_loaded', array( $this, 'maybe_hide_for_all_users' ) );
 			add_action( 'muplugins_loaded', array( $this, 'maybe_hide_for_all_users' ) );
 			add_filter( 'get_user_metadata', array( $this, 'maybe_hide_for_user' ), 10, 3 );
@@ -567,6 +607,21 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 	 	}
 
 	 	return $default;
+
+	}
+
+	/**
+	 * Maybe dismiss the "Gutenberg Editor" for all users.
+	 *
+	 * @return void
+	 */
+	function maybe_disable_for_all_users() {
+		$option = get_option( 'dismiss_gutenberg_nag_options' );
+		if ( 'yes' === $option['all_users'] ) {
+			add_filter( 'gutenberg_can_edit_post_type', '__return_false' );
+		}
+
+		return;
 
 	}
 
@@ -635,7 +690,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 
 			add_settings_section(
 				'dismiss_gutenberg_nag_options',
-				__( 'Dismiss "<strong>try Gutenberg</strong>" Nag -- Callout Configuration Option Settings', 'dismiss-gutenberg-nag' ),
+				__( 'Dismiss "<strong>try Gutenberg</strong>" Nag', 'dismiss-gutenberg-nag' ) . ' -- ' . __( 'Callout Configuration Option Settings', 'dismiss-gutenberg-nag' ),
 				array( $this, 'settings_section' ),
 				'writing'
 			);
@@ -693,6 +748,8 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<p>
 		<?php _e( 'By <u>default</u> is <u>totally dismissed</u> for all users.', 'dismiss-gutenberg-nag' )
 		?>
+		<?php _e( 'The options to disable Gutenberg Editor will be added in future releases.', 'dismiss-gutenberg-nag' )
+		?>
 		</p>
 		<script>
 			// Control whether the other settings are disabled depending on whether "Dismiss Always" is "Yes" a/o "No"
@@ -740,7 +797,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<span class='description'>
 		<?php 
 			echo str_repeat( '&nbsp;', 5 );
-			_e( '"try Gutenberg" callout will be dismissed for all user capability type. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
+			_e( '"try Gutenberg" callout is dismissed for all user capability type. (<strong>default</strong>)', 'dismiss-gutenberg-nag' );
 		?>
 		</span>
 		</label>
@@ -793,7 +850,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<br />
 		<span class='description'>
 		<?php 
-		_e( 'When this option is enabled "try Gutenberg" callout will be dismissed for selected users that have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
+		_e( 'When this option is enabled "try Gutenberg" callout is dismissed for selected users that have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
 		?>
 		</span><br />
 		<br />
@@ -844,7 +901,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		<br />
 		<span class='description'>
 		<?php 
-		_e( 'When this option is enabled "try Gutenberg" callout will be dismissed for users that not have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
+		_e( 'When this option is enabled "try Gutenberg" callout is dismissed for users that not have edit post (edit_post) capability.', 'dismiss-gutenberg-nag' )
 		?>
 		</span>
 		</p>
@@ -909,11 +966,11 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 		}
 
 		if ( ! in_array( $value['all_users'], array( 'yes', 'no' ) ) ) {
-			$value['non_edit_posts'] = 'no';
+			$value['non_edit_posts'] = 'yes';
 		}
 
 		if ( ! in_array( $value['non_edit_posts'], array( 'yes', 'no' ) ) ) {
-			$value['non_edit_posts'] = 'no';
+			$value['non_edit_posts'] = 'yes';
 		}
 
 		$value['specific_users'] = array_filter( array_map( 'intval', (array) $value['specific_users'] ) );
@@ -938,7 +995,7 @@ class Dismiss_Gutenberg_Nag_Option_Settings{
 
 		add_option( 'dismiss_gutenberg_nag_options', array(
 			'all_users' => 'yes',
-			'non_edit_posts' => 'yes',
+			'non_edit_posts' => 'yes', # no
 			'specific_users' => array(),
 			'disable_gutenberg' => 'yes'
 		) );
